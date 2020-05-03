@@ -1,0 +1,27 @@
+###############################################################################
+#                          Docker-compose base (probando spatie/dashboard)  #
+###############################################################################
+version: "3.1"
+services:
+  webserver:
+    image: ubu_nginx:7.4
+    container_name: dash-web
+    working_dir: /var/www
+    restart: "no"
+    volumes:
+      - ./dash:/var/www/html
+    ports:
+      - "80:80"
+  mysqldb:
+    image: mysql:5.6.47
+    container_name: dash-mysql56
+    volumes:
+      - "./mysql-data/db56:/var/lib/mysql"
+    restart: "no"
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: passW0Rd
+      MYSQL_DATABASE: dash
+      MYSQL_USER: dash
+      MYSQL_PASSWORD: dash
