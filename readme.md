@@ -2,7 +2,7 @@ PHP 7.4 FPM & CLI + Nginx
 =========================
 
 Basado en un fork de joselfonseca ahora con UBUNTU  20.04 y php7.4 
-
+ejemplo de docker-compose en la carpeta docker-compose-example
 
 Original Credits by @joselfonseca:
 
